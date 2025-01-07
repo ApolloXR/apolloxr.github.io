@@ -1,1 +1,47 @@
-"Hello World" 
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ApolloXR</title>
+
+    </head>
+    <body style="text-align: center;">
+        <h1>Welcome to ApolloXR</h1>
+
+        <h2>Click a button to change the background color</h2>
+        <p id="buttons">
+            <button id="red">R</button>
+            <button id="green">G</button>
+            <button id="blue">B</button>  
+            <button id="white">W</button>
+            <button id="black">K</button>
+        </p>
+
+    </body>
+    <script>
+        
+        document.querySelector('#red').addEventListener('click', function() {
+            document.body.style.backgroundColor = 'red';
+        });
+        
+        document.querySelector('#green').addEventListener('click', function() {
+            document.body.style.backgroundColor = 'green';
+        });
+        
+        document.querySelector('#blue').addEventListener('click', function() {
+            document.body.style.backgroundColor = 'blue';
+        });
+
+        document.querySelector('#white').addEventListener('click', function() {
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+        });
+
+        document.querySelector('#black').addEventListener('click', function() {
+            document.body.style.backgroundColor = 'black';
+            document.body.style.color = 'white';
+        });
+        
+    </script>
+</html>
