@@ -14,6 +14,7 @@
             <button id="red">R</button>
             <button id="green">G</button>
             <button id="blue">B</button>  
+            <button id="yellow">Y</button>
             <button id="white">W</button>
             <button id="black">K</button>
         </p>
@@ -41,6 +42,11 @@
         document.querySelector('#black').addEventListener('click', function() {
             document.body.style.backgroundColor = 'black';
             document.body.style.color = 'white';
+        });
+
+        document.querySelector('#yellow').addEventListener('click', function() {
+            document.body.style.backgroundColor = 'yellow';
+            document.body.style.color = 'black';
         });
         
     </script>
