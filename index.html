@@ -1,53 +1,108 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>ApolloXR</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApolloXR - High Quality 3D Models</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">ApolloXR</a>
+        </div>
+    </nav>
 
-    </head>
-    <body style="text-align: center;">
-        <h1>Welcome to ApolloXR</h1>
+    <header class="hero">
+        <div class="container">
+            <h1>Premium 3D Assets for Your Projects</h1>
+            <p class="lead">Discover our collection of high-quality 3D models ready to elevate your designs</p>
+        </div>
+    </header>
 
-        <h2>Click a button to change the background color</h2>
-        <p id="buttons">
-            <button id="red">R</button>
-            <button id="green">G</button>
-            <button id="blue">B</button>  
-            <button id="yellow">Y</button>
-            <button id="white">W</button>
-            <button id="black">K</button>
-        </p>
+    <section class="carousel-section">
+        <div class="container">
+            <div id="modelCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="model-card" data-model="robot">
+                            <div class="model-preview">
+                                <img src="images/robot-preview.jpg" alt="Robot Model" class="img-fluid">
+                                <div class="view-3d-overlay">View in 3D</div>
+                            </div>
+                            <h3>Robot Model</h3>
+                            <p>High-poly robot character with animations</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="model-card" data-model="car">
+                            <div class="model-preview">
+                                <img src="images/car-preview.jpg" alt="Sports Car" class="img-fluid">
+                                <div class="view-3d-overlay">View in 3D</div>
+                            </div>
+                            <h3>Sports Car</h3>
+                            <p>Detailed sports car model with realistic materials</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="model-card" data-model="building">
+                            <div class="model-preview">
+                                <img src="images/building-preview.jpg" alt="Modern Building" class="img-fluid">
+                                <div class="view-3d-overlay">View in 3D</div>
+                            </div>
+                            <h3>Modern Building</h3>
+                            <p>Architectural model with detailed textures</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#modelCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#modelCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
 
-    </body>
+    <section class="cta-section">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest 3D assets and updates</p>
+            <form id="subscribeForm" class="subscribe-form">
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" placeholder="Enter your email" required>
+                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 3D Assets Pro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="modelViewer" class="model-viewer">
+        <div class="model-viewer-content">
+            <span class="close-btn">&times;</span>
+            <div id="viewerContainer" class="viewer-container"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
     <script>
-        
-        document.querySelector('#red').addEventListener('click', function() {
-            document.body.style.backgroundColor = 'red';
-        });
-        
-        document.querySelector('#green').addEventListener('click', function() {
-            document.body.style.backgroundColor = 'green';
-        });
-        
-        document.querySelector('#blue').addEventListener('click', function() {
-            document.body.style.backgroundColor = 'blue';
-        });
-
-        document.querySelector('#white').addEventListener('click', function() {
-            document.body.style.backgroundColor = 'white';
-            document.body.style.color = 'black';
-        });
-
-        document.querySelector('#black').addEventListener('click', function() {
-            document.body.style.backgroundColor = 'black';
-            document.body.style.color = 'white';
-        });
-
-        document.querySelector('#yellow').addEventListener('click', function() {
-            document.body.style.backgroundColor = 'yellow';
-            document.body.style.color = 'black';
-        });
-        
+        // Initialize GLTFLoader in the global scope
+        const GLTFLoader = THREE.GLTFLoader;
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
